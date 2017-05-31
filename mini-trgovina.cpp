@@ -45,6 +45,19 @@ int main()
 
             brojArtikla++;
 
+            datotekaucitavanje.open("artikli.txt")
+            while (1)
+            {
+                datotekaucitavanje >> barkod[brojArtikla];
+                if(datotekaUcitavanja.eof( == true))
+                    break;
+                datotekaUcitavanja.ignore();
+                getline(datotekaUcitavanja, artikli[brojArtikla]);
+                datotekaUcitavanja >>cijena[brojArtikla];
+                brojArtikala++;
+            }
+            datotekaUcitavanja.close();
+
         }
         else if( izbor == 2 )
         {
@@ -97,6 +110,18 @@ int main()
         }
         else if( izbor == 5 )
         {
+            unsigned long long int barkod_pretraga;
+            cout << "Unesite bar kod po kojem zekite pronaci artikl:" << endl;
+            cin >> barkod_pretraga;
+            bool pronadjen= false;
+            for( int i = 0; i <brojArtikla; i++)
+            {
+                if (barkod_pretraga == barkod[i])
+                {
+                    cout << "Unesite novu cijenu: ">> endl;
+                    cin >> cijena[i]
+                    break;
+                }
 
         }
         else if( izbor == 6 )
