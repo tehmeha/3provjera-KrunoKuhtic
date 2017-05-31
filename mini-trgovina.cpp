@@ -61,12 +61,30 @@ int main()
             }
             if (pronadjen == false)
             {
-                cout << "Takav artikl nje pronağen" << endl;
+                cout << "Takav artikl nje pronadjen" << endl;
             }
 
         }
         else if( izbor == 4 )
         {
+            string naziv_Artikla;
+            cout << "Unesite artikl koji zelite pronaci:" << endl;
+            cin.ignore();
+            getline(cin, naziv_Artikla);
+            bool pronadjen = false;
+            for( int i = 0; i <brojArtikla; i++)
+            {
+                if (naziv_Artikla == artikli[i])
+                {
+                    cout << artikli[i] << "\t" << barkod[i] << "\t" << cijena[i] << endl;
+                    pronadjen = true;
+                    break;
+                }
+            }
+            if (pronadjen == false)
+            {
+                cout << "Takav artikl nje pronadjen" << endl;
+            }
         }
         else if( izbor == 5 )
         {
